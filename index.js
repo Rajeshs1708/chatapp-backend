@@ -1,5 +1,6 @@
 require('dotenv').config()
 const express = require('express')
+const bodyParser = require("body-parser")
 const app = express()
 const userRoutes = require('./routes/user.routes')
 const Message = require('./model/Message')
@@ -8,7 +9,7 @@ require('./connection')
 
 const rooms = ['general', 'tech', 'colleague', 'friends']
 const cors = require('cors')
-
+app.use(bodyParser.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(cors())
