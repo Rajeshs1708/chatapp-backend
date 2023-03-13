@@ -19,7 +19,7 @@ const server = require('http').createServer(app)
 const PORT = 5001
 const io = require('socket.io')(server, {
   cors: {
-    origin: 'http://localhost:3000',
+    origin: 'https://chatapp-03-23.netlify.app',
     methods: ['GET', 'POST']
   }
 })
